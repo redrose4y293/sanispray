@@ -1,8 +1,8 @@
 import './Contact.css'
 
 function Contact() {
-  const formspreeId = import.meta.env.VITE_FORMSPREE_ID || ''
-  const action = formspreeId ? `https://formspree.io/f/${formspreeId}` : undefined
+  const formspreeId = 'https://formspree.io/f/mgvnzqdp'  || ''
+  const action = formspreeId
 
   return (
     <div className="contact">
@@ -95,3 +95,4 @@ function Contact() {
 }
 
 export default Contact
+
