@@ -1,3 +1,4 @@
+/* === Header Base === */
 .site-header {
   position: sticky;
   top: 0;
@@ -12,6 +13,7 @@
   backdrop-filter: blur(8px);
 }
 
+/* === Brand === */
 .brand {
   font-weight: 800;
   letter-spacing: 0.3px;
@@ -20,6 +22,7 @@
   font-size: 1.2rem;
 }
 
+/* === Nav (Desktop Default) === */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -46,6 +49,7 @@
   background: rgba(247, 181, 0, 0.1);
 }
 
+/* === Buttons === */
 .btn {
   display: inline-block;
   padding: 0.55rem 0.95rem;
@@ -74,11 +78,13 @@
   background: #e6a300;
 }
 
+/* === Mobile Layout === */
 @media (max-width: 768px) {
   .site-header {
     padding: 0.75rem 1rem;
   }
 
+  /* Hamburger button visible on mobile */
   .menu-toggle {
     position: relative;
     width: 40px;
@@ -93,6 +99,7 @@
     background: transparent;
     cursor: pointer;
   }
+
   .menu-toggle span {
     width: 22px;
     height: 2px;
@@ -102,11 +109,19 @@
     transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s ease;
     transform-origin: center;
   }
-  /* Open state transforms into an "X" */
-  .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-toggle.open span:nth-child(2) { opacity: 0; }
-  .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+  /* Open state turns into an "X" */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Collapsed Nav Menu */
   .nav {
     position: absolute;
     top: 60px;
@@ -118,9 +133,53 @@
     padding: 0.75rem;
     gap: 0.25rem;
     display: none;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
   }
-  .nav.open { display: flex; }
-  .nav a { font-size: 0.95rem; padding: 0.5rem 0.75rem; width: 100%; border-radius: 6px; }
-  .nav a:hover { background: rgba(255,255,255,0.06); }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* === Desktop Layout === */
+@media (min-width: 769px) {
+  /* hide the hamburger icon */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* make sure nav is always visible */
+  .nav {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 0.75rem 1rem;
+    height: auto;
+    opacity: 1;
+  }
+
+  .nav a {
+    padding: 0.25rem 0.5rem;
+    width: auto;
+  }
+
+  /* keep Buy Now inline */
+  .nav .btn {
+    padding: 0.45rem 0.9rem;
+  }
 }
