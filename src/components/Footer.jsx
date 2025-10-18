@@ -19,17 +19,23 @@ function Footer() {
           </ul>
         </div>
         
-        <div className="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a
-            href="/GB.pdf"   
-            target="_blank" rel="noopener noreferrer">Global Poliy</li>
-          </ul>
-        </div>
+<div className="footer-section">
+  <h4>Support</h4>
+  <ul>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+    <li>
+      <a
+        href="/GB.pdf"     // path to your PDF (place it in /public)
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Global Policy
+      </a>
+    </li>
+  </ul>
+</div>
         
         <div className="footer-section">
           <h4>Contact</h4>
@@ -47,4 +53,5 @@ function Footer() {
 }
 
 export default Footer
+
 
